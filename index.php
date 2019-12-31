@@ -103,7 +103,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <canvas id="relatorio"></canvas>
+                        <div id="my-chats"></div>
                     </div>
                 </div>
 
@@ -115,6 +115,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!-- JS do Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Google charts -->
+    <script type="text/javascript" src="http://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 
     <script>
         $("#menu-toggle").click(function(event) {
@@ -122,26 +125,5 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
-
-    <script>
-    
-    var contexto = document.getElementById("relatorio").getContext('2d');
-    var grafico = new Chart(contexto, {
-        type:'line',
-        data: {
-            labels: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho'],
-            datasets: [{
-                label:'Vendas no Ano',
-                backgroundColor: "#5898d9ff",
-                borderColor: "#5898d9ff",
-                data: [22,28,35,33,42,49]
-            }]
-        }
-    });
-
-    </script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-    <script src="js/dev.chartjs.min.js"></script>
 </body>
 </html>
