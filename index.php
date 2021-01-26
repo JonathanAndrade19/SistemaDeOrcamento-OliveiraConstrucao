@@ -1,3 +1,9 @@
+<?php
+    require_once('database/dbConnect.php');
+
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -52,48 +58,26 @@
                 <table class="table bg-white">
                     <thead>
                         <tr>
-                            <th class="table-col-title">DESCRIÇAO DO SERVIÇO</th>
-                            <th class="table-col-title">UNID</th>
-                            <th class="table-col-title">VALOR</th>
-                            <th class="table-col-title">QUANTIDADE</th>
-                            <th class="table-col-title">TOTAL</th>
+                            <th class="table-col-title">CLIENTE</th>
+                            <th class="table-col-title">ENDEREÇO</th>
+                            <th class="table-col-title">CONTRATO</th>
+                            <th class="table-col-title">DESCRIÇÃO</th>
+                            <th class="table-col-title">DATA</th>
                         </tr>
                     </thead>
+                    <?php
+                        $consulta = "SELECT * FROM Construcao";
+                        $consultaAgenda = mysqli_query($link, $consulta);
+                        while($dados = mysqli_fetch_assoc($consultaAgenda)){
+                    ?>
                     <tr>
-                        <th>1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th><?php echo $dados['cliente']; ?></th>
+                        <td><?php echo $dados['endereco']; ?></td>
+                        <td><?php echo $dados['contato']; ?></td>
+                        <td><?php echo $dados['descricao']; ?></td>
+                        <td><?php echo date('d/m/Y',  strtotime('data_contrato')); ?></td>
                     </tr>
-                     <tr>
-                        <th>2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>4</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <?php } ?>
                     <tbody>
 
                     </tbody>

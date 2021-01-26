@@ -16,9 +16,7 @@
             <div class="sidebar-heading"><img src="img/logo.png"><span>Orçamento</span></div>
             <div class="list-group list-group-flush border-right">
                 <a href="index.php" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>Inicio</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-users"></i>Funcionários</a> -->
                 <a href="orcamento.php" class="list-group-item list-group-item-action"><i class="fas fa-box-open"></i>Orçamento</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-sitemap"></i>Categorias</a> -->
                 <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-people-carry"></i>Fornecedores</a>
                 <a href="#" class="list-group-item list-group-item-action"><i class="far fa-chart-bar"></i>Relatórios</a>
             </div>   
@@ -34,49 +32,47 @@
                 </button>   
                 <div class="collapse navbar-collapse" id="son-navbar-collapse">
                         <form class="form-inline" id="navbar-search-form">
-                                <!-- <input type="text" class="form-control form-field son-form-field" placeholder="Pesquisar" id="navbar-search-field"> -->
                         </form>
                     
                         <div id="navbar-profile" class="ml-auto">
-                                <!-- <img src="img/foto-perfil.jpg" alt="" srcset="">
-                                <span>Jonathan Andrade</span> -->
+                              
                         </div>
                 </div>
             </nav>
         <!-- Formulário -->
         <h3 id="main-page-form-title" class="son-main-text-3">  </h3> 
             <div class="new-card">
-                <form class="card son-form">
+                <form class="card son-form" action="cadastrarOrcamento.php" method="post"  id="formCadastrarse">
                     <div class="card-body son-form-body">
                         <div class="row form-group">
                         <div class="col-sm">
                             <label for="">Cliente: </label>
-                            <input type="text" class="form-field son-form-field form-control" id="user-field" placeholder="Cliente">
+                            <input name="cliente" type="text" class="form-field son-form-field form-control" id="user-field" placeholder="Cliente">
                         </div>
                         <div class="col-sm">
                             <label for="">Endereço: </label>
-                            <input type="text" class="form-field son-form-field form-control" id="user-field" placeholder="">
+                            <input name="endereco" type="text" class="form-field son-form-field form-control" id="user-field" placeholder="">
                         </div>
                         <div class="col-sm">
                             <label for="">Contato: </label>
-                            <input type="text" maxlength="15" class="form-field son-form-field form-control" id="user-field" placeholder="(083) 98888-0000">
+                            <input name="contato" type="text" maxlength="15" class="form-field son-form-field form-control" id="user-field" placeholder="(083) 98888-0000">
                         </div>
                         <hr>
                     </div>
 
                     <div class="form-group">
                         <label for="">Descrição</label>
-                        <textarea name="msn" id="body-field" class="form-field son-form-field form-control" placeholder="Escreva um pouco sobre você."></textarea>
+                        <textarea name="descricao" id="body-field" class="form-field son-form-field form-control" placeholder="Escreva um pouco sobre você."></textarea>
                         <hr>
                     </div>             
                     <div>
                         <label for="">Data</label>
-                        <input type="date" class="form-field son-form-field form-control" id="date-filed">
+                        <input name="data_contrato" type="date" class="form-field son-form-field form-control" id="date-filed">
                     </div>
                     </div>
                                 
                     <div class="confirm-btns card-footer">
-                        <button class="btn btn-primary">Puclicar Orçamento</button>
+                        <button class="btn btn-primary">Cadastrar Orçamento</button>
                     </div>
                 </form>
             </div>
